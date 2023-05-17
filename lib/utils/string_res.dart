@@ -5,6 +5,8 @@ class StringRes{
   static const currently = "We currently have over 140 live roles waiting for you!";
   static const create = "Create Account";
   static const alreadyAnAcc = "Already have an account?";
+  static const termsText = "By creating an account, you are agreeing";
+  static const termsText1 = "Terms of Service";
   ///------------------------Sign In----------------------------///
   static const logo = "Logo";
   static const signInTo = "Sign in to your account";

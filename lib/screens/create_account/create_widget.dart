@@ -60,3 +60,39 @@ Widget signInButtonCreate = GetBuilder<CreateController>(
     ),
   ),
 );
+
+Widget termsText = GetBuilder<CreateController>(
+  builder: (controller) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          StringRes.termsText,
+          style: TextStyle(
+              color: ColorRes.grey,
+              fontSize: 18,
+              fontWeight: FontWeight.w400),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "to our",
+              style: TextStyle(
+                  color: ColorRes.grey,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400),
+            ),
+            Text(
+              StringRes.termsText1,
+              style: TextStyle(
+                  color: ColorRes.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500),
+            )
+          ],
+        ),
+      ],
+    );
+  },
+);

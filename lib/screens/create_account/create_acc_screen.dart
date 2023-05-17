@@ -14,15 +14,19 @@ class CreateAccount extends StatelessWidget {
       body: Container(
         height: Get.height,
         width: Get.width,
-        decoration: BoxDecoration(image: DecorationImage(image: AssetImage(AsstesRes.gradiant),fit: BoxFit.fill),),
-        child: Column(
-          children: [
-            logoText(),
-            containorText(),
-            createButton,
-            haveAnAcco(),
-            signInButtonCreate
-          ],
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage(AsstesRes.gradiant),fit: BoxFit.cover),),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10,right: 10),
+          child: Column(
+            children: [
+              logoText(),
+              containorText(),
+              createButton,
+              haveAnAcco(),
+              signInButtonCreate,
+              termsText
+            ],
+          ),
         ),
       ),
     );

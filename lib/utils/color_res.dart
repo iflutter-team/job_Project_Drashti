@@ -7,4 +7,5 @@ class ColorRes{
   static const black = Colors.black;
   static const buttonColor =Color(0XFFBF9EFF);
   static const white =Colors.white;
+  static const grey =Color(0XFF97A0AF);
 }

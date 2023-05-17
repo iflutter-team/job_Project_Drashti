@@ -1,4 +1,6 @@
 class AsstesRes{
+  ///-------------------intro-----------------------///
+  static const dotImage ="${imageBase}i4.png";
   ///---------------------------create-------------------------///
   static const gradiant ="${imageBase}i3.png";
 
