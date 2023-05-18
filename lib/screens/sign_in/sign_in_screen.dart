@@ -13,36 +13,38 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(SignInController());
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      body:Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10),
-        child: Column(
-          children: [
-            verticalSize(Get.height*0.10),
-            logoContainor(),
-            verticalSize(Get.height*0.022),
-            signInText(),
-            verticalSize(Get.height*0.040),
-            emailText(),
-            verticalSize(Get.height*0.009),
-            emailTextFeildSignIn,
-            verticalSize(Get.height*0.025),
-            passText(),
-            verticalSize(Get.height*0.009),
-            passTextFeildSignIn,
-            verticalSize(Get.height*0.012),
-            signInCheckbox,
-            verticalSize(Get.height*0.020),
-            signInButton,
-            verticalSize(Get.height*0.022),
-            forgotPass,
-            verticalSize(Get.height*0.020),
-            continueText(),
-            verticalSize(Get.height*0.025),
-            googleAndFace(),
-            verticalSize(Get.height*0.025),
-            dontHaveAccount,
-          ],
+      
+      body:SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          child: Column(
+            children: [
+              verticalSize(Get.height*0.10),
+              logoContainor(),
+              verticalSize(Get.height*0.022),
+              signInText(),
+              verticalSize(Get.height*0.040),
+              emailText(),
+              verticalSize(Get.height*0.009),
+              emailTextFeildSignIn,
+              verticalSize(Get.height*0.025),
+              passText(),
+              verticalSize(Get.height*0.009),
+              passTextFeildSignIn,
+              verticalSize(Get.height*0.012),
+              signInCheckbox,
+              verticalSize(Get.height*0.020),
+              signInButton,
+              verticalSize(Get.height*0.022),
+              forgotPass,
+              verticalSize(Get.height*0.020),
+              continueText(),
+              verticalSize(Get.height*0.025),
+              googleAndFace(),
+              verticalSize(Get.height*0.025),
+              dontHaveAccount,
+            ],
+          ),
         ),
       ),
     );

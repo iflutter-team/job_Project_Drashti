@@ -23,9 +23,18 @@ Widget emailText() {
 }
 
 Widget emailTextFeildSignIn =
-    GetBuilder<SignInController>(builder: (controller) {
-  return textFieldDecoration(
-      commonTextField(controller: controller.email, hintText: StringRes.email));
+    GetBuilder<SignInController>(id:"refresh",builder: (controller) {
+  return Column(
+    children: [
+      textFieldDecoration(commonTextField(
+          controller: controller.email,
+          hintText: StringRes.email,
+          onChanged: controller.emailValidatorSign)),
+      controller.emailErrorSign != null
+          ? errorContainor(data:controller.emailErrorSign??"")
+          : const SizedBox(),
+    ],
+  );
 });
 
 Widget passText() {
@@ -33,14 +42,29 @@ Widget passText() {
 }
 
 Widget passTextFeildSignIn =
-    GetBuilder<SignInController>(builder: (controller) {
+    GetBuilder<SignInController>(id:"refresh",builder: (controller) {
   return textFieldDecoration(commonTextField(
-      controller: controller.passWordController, hintText: StringRes.passWord));
+    controller: controller.passWordController,
+    hintText: StringRes.passWord,
+    suffixIcon: suffixIconSignUp,
+    obscureText: controller.signPass,
+  ));
 });
-
+Widget suffixIconSignUp = GetBuilder<SignInController>(
+  id: "refresh",
+  builder: (controller) {
+    return InkWell(
+      onTap: () => controller.suffixChangeSign(),
+      child: Icon(
+        controller.signPass ? Icons.visibility_off : Icons.visibility,
+        color: ColorRes.grey,
+      ),
+    );
+  },
+);
 Widget signInButton = GetBuilder<SignInController>(
   builder: (controller) {
-    return commonButton(StringRes.SignIn);
+    return commonButton(StringRes.signIn);
   },
 );
 
@@ -52,24 +76,23 @@ Widget forgotPass = GetBuilder<SignInController>(
         style: TextStyle(
             color: ColorRes.drakPurple,
             fontWeight: FontWeight.w500,
-            fontSize:15),
+            fontSize: 15),
       ),
     );
   },
 );
 
-Widget continueText() {
-  return Text(
-    StringRes.continueWith,
-    style: TextStyle(
-        color: ColorRes.black, fontWeight: FontWeight.w400, fontSize: 15),
-  );
-}
+Widget dontHaveAccount = GetBuilder<SignInController>(
+  builder: (controller) {
+    return rowText(StringRes.dontHaveAcc, StringRes.signup);
+  },
+);
 
-Widget dontHaveAccount = GetBuilder<SignInController>(builder: (controller) {
-  return rowText(StringRes.dontHaveAcc, StringRes.signup);
-},);
-
-Widget signInCheckbox = GetBuilder<SignInController>(id:"refresh",builder: (controller) {
-  return commonCheckBox(value: controller.check, onChanged:(value)=> controller.select1(value));
-},);
+Widget signInCheckbox = GetBuilder<SignInController>(
+  id: "refresh",
+  builder: (controller) {
+    return commonCheckBox(
+        value: controller.check,
+        onChanged: (value) => controller.select1(value));
+  },
+);

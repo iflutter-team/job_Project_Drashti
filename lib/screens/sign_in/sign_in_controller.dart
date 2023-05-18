@@ -10,4 +10,22 @@ class SignInController extends GetxController{
     check  = value!;
     update(["refresh"]);
   }
+  bool signPass = true;
+  void suffixChangeSign() {
+    signPass = !signPass;
+    update(["refresh"]);
+  }
+  String? emailErrorSign;
+  void emailValidatorSign(String? value) {
+    if(value==null||value.isEmpty){
+      emailErrorSign = "Enter Email";
+    }
+    else if(!GetUtils.isEmail(value)){
+      emailErrorSign = 'Enter Valid Email';
+    }
+    else{
+      emailErrorSign = null;
+    }
+    update(["refresh"]);
+  }
 }

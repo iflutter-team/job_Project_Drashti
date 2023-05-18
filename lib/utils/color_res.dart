@@ -8,4 +8,5 @@ class ColorRes{
   static const buttonColor =Color(0XFFBF9EFF);
   static const white =Colors.white;
   static const grey =Color(0XFF97A0AF);
+  static const lightRed =Color(0XFFFEEFEF);
 }

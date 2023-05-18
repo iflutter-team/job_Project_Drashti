@@ -15,14 +15,14 @@ Widget logoText() {
 
 Widget containorText() {
   return Container(
-    alignment: Alignment.center,
     height: Get.height * 0.1441,
-    width: Get.width * 0.79,
+    width: Get.width * 0.85,
+    color: Colors.blue,
     child: Text(
       textAlign: TextAlign.center,
       StringRes.currently,
       style: TextStyle(
-          fontSize: 26,
+          fontSize: Get.height*0.03201,
           fontWeight: FontWeight.w400,
           color: ColorRes.black.withOpacity(0.7)),
     ),
