@@ -20,7 +20,8 @@ class SignInController extends GetxController{
     if(value==null||value.isEmpty){
       emailErrorSign = "Enter Email";
     }
-    else if(!GetUtils.isEmail(value)){
+
+    else if(!value.isEmail){
       emailErrorSign = 'Enter Valid Email';
     }
     else{

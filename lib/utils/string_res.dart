@@ -35,4 +35,25 @@ class StringRes{
    static const country = "Country";
    static const alreadyHaveAcc = "Already have an account?";
 
+   ///------------------------------Forgot Password-----------------------///
+  static const forgotPassword = "Forgot password";
+  static const emailAddress= "Email address";
+  static const forgotText = "Enter the email associated with your account and we’ll send an email with instructions to forgot password.";
+  static const sendIntro= "Send Instructions";
+
+  ///----------------------------Reset Passwor--------------------------///
+  static const resetPassword = "Reset Password";
+  static const newPassword = "New Password";
+  static const confirmPassword = "Confirm New Password";
+  static const createNew = "Create a new password";
+  static const save = "Save";
+///----------------------congrats--------------------------///
+  static const congrats = "Congrats!";
+  static const goToHome = "Go to homepage";
+  static const ready = "Your account is ready to use";
+  ///------------------profile--------------------------///
+  static const profile = "Profile";
+  static const nameText = "Adam Smith";
+  static const emailText = "adam.smith@yourdomain.com";
+  static const professionText = "UI/UX Designer";
 }

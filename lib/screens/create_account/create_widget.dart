@@ -9,28 +9,24 @@ Widget logoText() {
   return Text(
     StringRes.logo,
     style: TextStyle(
-        color: ColorRes.black, fontWeight: FontWeight.w600, fontSize: 44),
+        color: ColorRes.black, fontWeight: FontWeight.w600, fontSize: Get.width*0.1173),
   );
 }
 
 Widget containorText() {
-  return Container(
-    height: Get.height * 0.1441,
-    width: Get.width * 0.85,
-    color: Colors.blue,
-    child: Text(
-      textAlign: TextAlign.center,
-      StringRes.currently,
-      style: TextStyle(
-          fontSize: Get.height*0.03201,
-          fontWeight: FontWeight.w400,
-          color: ColorRes.black.withOpacity(0.7)),
-    ),
+  return Text(
+    textAlign: TextAlign.center,
+    StringRes.currently,
+    style: TextStyle(
+        fontSize: Get.width*0.06933,
+        fontWeight: FontWeight.w400,
+        color: ColorRes.black.withOpacity(0.7)),
   );
 }
 
 Widget createButton = GetBuilder<CreateController>(
-    builder: (controller) => commonButton(StringRes.create));
+    builder: (controller) => InkWell(onTap: ()=>controller.createToSignUp(),
+        child: commonButton(StringRes.create)));
 
 Widget haveAnAcco() {
   return Text(
@@ -38,25 +34,28 @@ Widget haveAnAcco() {
     style: TextStyle(
         color: ColorRes.black.withOpacity(0.6),
         fontWeight: FontWeight.w400,
-        fontSize: 18),
+        fontSize: Get.width*0.048),
   );
 }
 
 Widget signInButtonCreate = GetBuilder<CreateController>(
-  builder: (controller) => Container(
-    height: Get.height * 0.063,
-    width: Get.width * 0.90,
-    alignment: Alignment.center,
-    decoration: BoxDecoration(
-      border: Border.all(color: ColorRes.drakPurple, width: 1.5),
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Text(
-      StringRes.signup,
-      style: TextStyle(
-          color: ColorRes.drakPurple,
-          fontSize: Get.height * 0.022,
-          fontWeight: FontWeight.w500),
+  builder: (controller) => InkWell(
+    onTap: ()=>controller.createToSignIn(),
+    child: Container(
+      height: Get.height * 0.063,
+      width: Get.width * 0.90,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        border: Border.all(color: ColorRes.drakPurple, width: 1.5),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Text(
+        "Sign In",
+        style: TextStyle(
+            color: ColorRes.drakPurple,
+            fontSize: Get.height * 0.022,
+            fontWeight: FontWeight.w500),
+      ),
     ),
   ),
 );
@@ -70,24 +69,24 @@ Widget termsText = GetBuilder<CreateController>(
           StringRes.termsText,
           style: TextStyle(
               color: ColorRes.grey,
-              fontSize: 18,
+              fontSize:  Get.width*0.041,
               fontWeight: FontWeight.w400),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "to our",
               style: TextStyle(
                   color: ColorRes.grey,
-                  fontSize: 18,
+                  fontSize: Get.width*0.04267,
                   fontWeight: FontWeight.w400),
             ),
             Text(
               StringRes.termsText1,
               style: TextStyle(
                   color: ColorRes.black,
-                  fontSize: 18,
+                  fontSize:  Get.width*0.04267,
                   fontWeight: FontWeight.w500),
             )
           ],

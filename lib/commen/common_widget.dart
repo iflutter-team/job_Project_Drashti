@@ -33,7 +33,7 @@ Widget logoContainor() {
 
 Widget lableText(String data) {
   return Padding(
-    padding: EdgeInsets.only(left: Get.width * 0.065),
+    padding: EdgeInsets.only(left: Get.width * 0.055),
     child: Row(
       children: [
         Text(
@@ -41,7 +41,7 @@ Widget lableText(String data) {
           style: TextStyle(
               color: ColorRes.black.withOpacity(0.6),
               fontWeight: FontWeight.w500,
-              fontSize: Get.height * 0.0258),
+              fontSize: Get.width * 0.0373),
         ),
         Text(
           "*",
@@ -55,7 +55,7 @@ Widget lableText(String data) {
 Widget commonButton(String data) {
   return Container(
     height: Get.height * 0.063,
-    width: Get.width * 0.90,
+    width: Get.width * 0.904,
     alignment: Alignment.center,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
@@ -103,7 +103,7 @@ Widget googleAndFace() {
                 style: TextStyle(
                     color: ColorRes.black,
                     fontWeight: FontWeight.w500,
-                    fontSize: 15),
+                    fontSize: Get.width*0.04),
               )
             ],
           ),
@@ -130,7 +130,7 @@ Widget googleAndFace() {
                 style: TextStyle(
                     color: ColorRes.black,
                     fontWeight: FontWeight.w500,
-                    fontSize: 15),
+                    fontSize:  Get.width*0.04),
               )
             ],
           ),
@@ -147,14 +147,14 @@ Widget rowText(String data, String data1) {
       Text(
         data,
         style: TextStyle(
-            color: ColorRes.black, fontWeight: FontWeight.w500, fontSize: 15),
+            color: ColorRes.black, fontWeight: FontWeight.w500, fontSize:  Get.width*0.04),
       ),
       Text(
         data1,
         style: TextStyle(
             color: ColorRes.drakPurple,
             fontWeight: FontWeight.w500,
-            fontSize: 15),
+            fontSize:  Get.width*0.04),
       ),
     ],
   );
@@ -187,7 +187,7 @@ Widget continueText() {
   return Text(
     StringRes.continueWith,
     style: TextStyle(
-        color: ColorRes.black, fontWeight: FontWeight.w400, fontSize: 15),
+        color: ColorRes.black, fontWeight: FontWeight.w400, fontSize: Get.width*0.04),
   );
 }
 
@@ -196,15 +196,52 @@ Widget errorContainor({required String data}) {
     height: Get.height * 0.0345,
     width: Get.width * 0.904,
     decoration: BoxDecoration(
-        color: ColorRes.lightRed,
-        borderRadius: BorderRadius.circular(Get.height * 0.1219),),
+      color: ColorRes.lightRed,
+      borderRadius: BorderRadius.circular(Get.height * 0.1219),
+    ),
     child: Row(
       children: [
-        horizontalSize(Get.width*0.048),
-        Icon(Icons.error_rounded,color: ColorRes.red,size: 15,),
-        horizontalSize(Get.width*0.02),
-        Text(data,style: TextStyle(color: ColorRes.red,fontSize:9,fontWeight: FontWeight.w400),)
+        horizontalSize(Get.width * 0.048),
+        Icon(
+          Icons.error_rounded,
+          color: ColorRes.red,
+          size: 15,
+        ),
+        horizontalSize(Get.width * 0.02),
+        Text(
+          data,
+          style: TextStyle(
+              color: ColorRes.red, fontSize: 9, fontWeight: FontWeight.w400),
+        )
       ],
     ),
+  );
+}
+
+Widget commenBackArrow({void Function()? onTap}) {
+  return InkWell(
+    onTap: onTap,
+    child: Container(
+      height: Get.height * 0.0493,
+      width: Get.width * 0.1067,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: ColorRes.lightPurple,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Icon(Icons.arrow_back_ios_new_outlined,color: ColorRes.drakPurple,),
+    ),
+  );
+}
+Widget commenAppBarCont(Widget? child) {
+  return Container(
+    height: Get.height * 0.0493,
+    width: Get.width * 0.1067,
+    alignment: Alignment.center,
+    decoration: BoxDecoration(
+      color: ColorRes.lightPurple,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child:child,
   );
 }

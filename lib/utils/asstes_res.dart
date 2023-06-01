@@ -13,4 +13,6 @@ class AsstesRes{
   ///--------------------------signUp--------------------------------///
   static const india ="${imageBase}i7.png";
   static const uk ="${imageBase}i8.png";
+  ///------------------profile screen----------------------///
+  static const setting ="${imageBase}i9.png";
 }

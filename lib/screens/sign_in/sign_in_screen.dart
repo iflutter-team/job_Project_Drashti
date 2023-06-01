@@ -43,6 +43,18 @@ class SignIn extends StatelessWidget {
               googleAndFace(),
               verticalSize(Get.height*0.025),
               dontHaveAccount,
+              SizedBox(
+                height: 45,
+                width: 330,
+                child: TextField(
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+
+                    ),
+                    focusedBorder: OutlineInputBorder()
+                  ),
+                ),
+              )
             ],
           ),
         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:job_project/screens/forgot_password/forgot_password_screen.dart';
 
 class SignUpController extends GetxController{
 TextEditingController firstNameController = TextEditingController();
@@ -23,5 +25,9 @@ bool signUpCheck = false;
 void signUpCheckBox(value){
   signUpCheck = value;
   update(["SignUp"]);
+}
+void signUpToForgot(){
+
+  Get.to(ForgotScreen());
 }
 }

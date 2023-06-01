@@ -22,34 +22,44 @@ Widget emailText() {
   return lableText(StringRes.email);
 }
 
-Widget emailTextFeildSignIn =
-    GetBuilder<SignInController>(id:"refresh",builder: (controller) {
-  return Column(
-    children: [
-      textFieldDecoration(commonTextField(
-          controller: controller.email,
-          hintText: StringRes.email,
-          onChanged: controller.emailValidatorSign)),
-      controller.emailErrorSign != null
-          ? errorContainor(data:controller.emailErrorSign??"")
-          : const SizedBox(),
-    ],
-  );
-});
+Widget emailTextFeildSignIn = GetBuilder<SignInController>(
+    id: "refresh",
+    builder: (controller) {
+      return Column(
+        children: [
+          SizedBox(
+            height: 45,
+           width: 330,
+           child: commonTextField(color: controller.emailErrorSign!=""?ColorRes.red:Colors.amber,
+              controller: controller.email,
+              hintText: StringRes.email,
+              onChanged: controller.emailValidatorSign,
+            ),
+          ),
+          controller.emailErrorSign != null
+              ? errorContainor(data: controller.emailErrorSign ?? "")
+              : const SizedBox(),
+        ],
+      );
+    });
 
 Widget passText() {
   return lableText(StringRes.passWord);
 }
 
-Widget passTextFeildSignIn =
-    GetBuilder<SignInController>(id:"refresh",builder: (controller) {
-  return textFieldDecoration(commonTextField(
-    controller: controller.passWordController,
-    hintText: StringRes.passWord,
-    suffixIcon: suffixIconSignUp,
-    obscureText: controller.signPass,
-  ));
-});
+Widget passTextFeildSignIn = GetBuilder<SignInController>(
+    id: "refresh",
+    builder: (controller) {
+      return SizedBox(
+        height: 45,
+          width: 330,
+          child:commonTextField(
+        controller: controller.passWordController,
+        hintText: StringRes.passWord,
+        suffixIcon: suffixIconSignUp,
+        obscureText: controller.signPass,
+      ));
+    });
 Widget suffixIconSignUp = GetBuilder<SignInController>(
   id: "refresh",
   builder: (controller) {

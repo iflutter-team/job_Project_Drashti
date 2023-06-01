@@ -25,8 +25,6 @@ Widget bottomContainor = GetBuilder<IntroController>(
   builder: (controller) => Padding(
     padding: EdgeInsets.only(top: Get.height * 0.067),
     child: Container(
-      height: Get.height * 0.3966,
-      width: Get.width,
       decoration: BoxDecoration(
           color: Color(0XFFFFFFFF),
           borderRadius: BorderRadius.only(
@@ -50,62 +48,72 @@ Widget bottomContainor = GetBuilder<IntroController>(
             textAlign: TextAlign.center,
           ),
           verticalSize(Get.height*0.0349),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Card(
-                child: Container(
-                  height: Get.height * 0.1539,
-                  width: Get.width * 0.44,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Color(0XFFF3ECFF), width: 1.5),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        AsstesRes.job,
-                        height: Get.height * 0.0764,
+          Padding(
+            padding:  EdgeInsets.only(left: Get.height*0.0222,right: Get.height*0.0222),
+            child: Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: ()=>controller.introToCreateAc(),
+                    child: Card(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Color(0XFFF3ECFF)  , width: 1.5),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                          children: [
+                            verticalSize(Get.height*0.0222),
+                            Image.asset(
+                              AsstesRes.job,
+                              height: Get.height * 0.0764,
+                            ),
+                            verticalSize(Get.height*0.0111),
+                            Text(
+                              StringRes.job,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: ColorRes.black,
+                                  fontSize: 12),
+                            ),
+                            verticalSize(Get.height*0.0222),
+                          ],
+                        ),
                       ),
-                      Text(
-                        StringRes.job,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: ColorRes.black,
-                            fontSize: 12),
-                      )
-                    ],
+                    ),
                   ),
                 ),
-              ),
-              Card(
-                child: Container(
-                  height: Get.height * 0.1539,
-                  width: Get.width * 0.44,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Color(0XFFF3ECFF), width: 1.5),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        AsstesRes.employee,
-                        height: Get.height * 0.0764,
+                verticalSize(Get.height*0.0111),
+                Expanded(
+                  child: Card(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Color(0XFFF3ECFF), width: 1.5),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
+                        children: [
+                          verticalSize(Get.height*0.0222),
+                          Image.asset(
+                            AsstesRes.employee,
+                            height: Get.height * 0.0764,
+                          ),
+                          verticalSize(Get.height*0.0111),
+                          Text(
+                            StringRes.employee,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: ColorRes.black,
+                                fontSize:12),
+                          ),
+                          verticalSize(Get.height*0.0222),
+                        ],
                       ),
-                      Text(
-                        StringRes.employee,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: ColorRes.black,
-                            fontSize:12),
-                      )
-                    ],
+                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           )
         ],
       ),

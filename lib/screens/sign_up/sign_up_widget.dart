@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:job_project/commen/common_widget.dart';
@@ -9,53 +8,62 @@ import 'package:job_project/utils/string_res.dart';
 
 Widget bodyScreen() {
   return SingleChildScrollView(
-    child: Column(
-      children: [
-        logoContainor(),
-        signUpText(),
-        firstName(),
-        verticalSize(Get.height * 0.0123),
-        firstTextField,
-        verticalSize(Get.height * 0.0246),
-        lastName(),
-        verticalSize(Get.height * 0.0123),
-        lastTextField,
-        verticalSize(Get.height * 0.0246),
-        emailSignUp(),
-        verticalSize(Get.height * 0.0123),
-        emailSignUpTextField,
-        verticalSize(Get.height * 0.0246),
-        phone(),
-        verticalSize(Get.height * 0.0123),
-        phoneTextField,
-        verticalSize(Get.height * 0.0246),
-        passSignUp(),
-        verticalSize(Get.height * 0.0123),
-        passSignUpTextField,
-        verticalSize(Get.height * 0.0246),
-        occupation(),
-        verticalSize(Get.height * 0.0123),
-        occupationTextField,
-        verticalSize(Get.height * 0.0246),
-        city(),
-        verticalSize(Get.height * 0.0123),
-        cityTextField,
-        verticalSize(Get.height * 0.0246),
-        state(),
-        verticalSize(Get.height * 0.0123),
-        stateTextField,
-        verticalSize(Get.height * 0.0246),
-        country(),
-        verticalSize(Get.height * 0.0123),
-        countryTextField,
-        verticalSize(Get.height * 0.0123),
-        checkBoxSignUp,
-        signInButton,
-        continueText(),
-        googleAndFace(),
-        signUpRowText
-        
-      ],
+    child: Padding(
+      padding:  EdgeInsets.only(top: Get.height*0.1096,left: Get.width*0.048,right:  Get.width*0.048,),
+      child: Column(
+        children: [
+          logoContainor(),
+          verticalSize(Get.height * 0.0222),
+          signUpText(),
+          verticalSize(Get.height * 0.0492),
+          firstName(),
+          verticalSize(Get.height * 0.0123),
+          firstTextField,
+          verticalSize(Get.height * 0.0246),
+          lastName(),
+          verticalSize(Get.height * 0.0123),
+          lastTextField,
+          verticalSize(Get.height * 0.0246),
+          emailSignUp(),
+          verticalSize(Get.height * 0.0123),
+          emailSignUpTextField,
+          verticalSize(Get.height * 0.0246),
+          phone(),
+          verticalSize(Get.height * 0.0123),
+          phoneTextField,
+          verticalSize(Get.height * 0.0246),
+          passSignUp(),
+          verticalSize(Get.height * 0.0123),
+          passSignUpTextField,
+          verticalSize(Get.height * 0.0246),
+          occupation(),
+          verticalSize(Get.height * 0.0123),
+          occupationTextField,
+          verticalSize(Get.height * 0.0246),
+          city(),
+          verticalSize(Get.height * 0.0123),
+          cityTextField,
+          verticalSize(Get.height * 0.0246),
+          state(),
+          verticalSize(Get.height * 0.0123),
+          stateTextField,
+          verticalSize(Get.height * 0.0246),
+          country(),
+          verticalSize(Get.height * 0.0123),
+          countryTextField,
+          verticalSize(Get.height * 0.0123),
+          checkBoxSignUp,
+          verticalSize(Get.height * 0.0345),
+          signInButton,
+          verticalSize(Get.height * 0.0345),
+          continueText(),
+          verticalSize(Get.height * 0.0345),
+          googleAndFace(),
+          verticalSize(Get.height * 0.0333),
+          signUpRowText,
+          verticalSize(Get.height * 0.0333)
+        ],
+      ),
     ),
   );
 }
@@ -65,7 +73,7 @@ Widget signUpText() {
     StringRes.signUpForFree,
     style: TextStyle(
         fontWeight: FontWeight.w600,
-        fontSize: Get.height * 0.025,
+        fontSize: Get.width*0.0533,
         color: ColorRes.black),
   );
 }
@@ -149,16 +157,22 @@ Widget city() {
 }
 
 Widget cityTextField = GetBuilder<SignUpController>(
-    builder: (controller) => textFieldDecoration(commonTextField(
-        controller: controller.cityController, hintText: StringRes.city)));
+  builder: (controller) => textFieldDecoration(
+    commonTextField(
+        controller: controller.cityController, hintText: StringRes.city),
+  ),
+);
 
 Widget state() {
   return lableText(StringRes.state);
 }
 
 Widget stateTextField = GetBuilder<SignUpController>(
-    builder: (controller) => textFieldDecoration(commonTextField(
-        controller: controller.cityController, hintText: StringRes.state)));
+  builder: (controller) => textFieldDecoration(
+    commonTextField(
+        controller: controller.cityController, hintText: StringRes.state),
+  ),
+);
 
 Widget country() {
   return lableText(StringRes.country);
@@ -179,6 +193,8 @@ Widget checkBoxSignUp = GetBuilder<SignUpController>(
 
 Widget signInButton = GetBuilder<SignUpController>(
     builder: (controller) => commonButton(StringRes.signup));
-Widget signUpRowText = GetBuilder<SignUpController>(builder: (controller) {
-  return rowText(StringRes.alreadyHaveAcc, StringRes.signup);
-},);
+Widget signUpRowText = GetBuilder<SignUpController>(
+  builder: (controller) {
+    return rowText(StringRes.alreadyHaveAcc, StringRes.signup);
+  },
+);
